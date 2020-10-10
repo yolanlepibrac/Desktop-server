@@ -11,6 +11,7 @@ python manage.py sqlmigrate desktopTest 0001
 python manage.py migrate
 
 python manage.py runserver
+heroku local
 
 python3 manage.py shell
 
@@ -18,3 +19,5 @@ python manage.py createsuperuser
 userName:admin
 password:yoyolepib
 email:yolan.pibrac@gmail.com
+
+heroku config:set TIMES=2
