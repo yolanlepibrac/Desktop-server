@@ -1,4 +1,4 @@
-#!/Users/mac/Desktop/1-info/personnal/desktop/desktop-django/tutorial-env/bin/python
+#!/Users/mac/Desktop/1-info/personnal/desktop/desktop-django/desktopEnv/bin/python3
 # When the django-admin.py deprecation ends, remove this script.
 import warnings
 
