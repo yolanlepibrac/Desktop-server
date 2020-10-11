@@ -15,9 +15,7 @@ from .models import Note
 def notes_get(request):
     notes = Note.objects.all()
     serializer = NoteSerializer(notes, many=True)
-    response = JsonResponse(serializer.data, safe=False)
-    response["Access-Control-Allow-Origin"] = "*"
-    return response
+    return JsonResponse(serializer.data, safe=False)
 
 @csrf_exempt
 def note_create(request):
