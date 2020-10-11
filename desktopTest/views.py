@@ -11,7 +11,7 @@ from django.contrib.auth.models import User
 from .serializers import  NoteSerializer, UserSerializer
 from .models import Note
 
-
+@csrf_exempt
 def notes_get(request):
     notes = Note.objects.all()
     serializer = NoteSerializer(notes, many=True)
@@ -26,6 +26,7 @@ def note_create(request):
         return JsonResponse(serializer.data, status=201)
     return JsonResponse(serializer.errors, status=400)
 
+@csrf_exempt
 def note_update(request, id):
     try:
         note = Note.objects.get(id=id)
@@ -38,7 +39,7 @@ def note_update(request, id):
         return JsonResponse(serializer.data)
     return JsonResponse(serializer.errors, status=400)
 
-
+@csrf_exempt
 def note_delete(request, id):
     try:
         note = Note.objects.get(id=id)
