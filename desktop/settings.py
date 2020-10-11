@@ -21,6 +21,7 @@ ALLOWED_HOSTS = ['*']
 # Application definition
 
 INSTALLED_APPS = [
+    'rest_framework',
     'desktopTest.apps.DesktopTestConfig',
     'django.contrib.admin',
     'django.contrib.auth',
@@ -67,11 +68,11 @@ WSGI_APPLICATION = 'desktop.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.postgresql_psycopg2', 
-        'NAME': os.environ.get('DATABASE_NAME'), 
-        'USER': os.environ.get('DATABASE_USER'), 
-        'PASSWORD': os.environ.get('DATABASE_PASSWORD'),
-        'HOST': os.environ.get('DATABASE_HOST'), 
-        'PORT': os.environ.get('DATABASE_PORT'),
+        'NAME': os.environ.get('DATABASE_NAME', 'postgres'), 
+        'USER': os.environ.get('DATABASE_USER', 'postgres'), 
+        'PASSWORD': os.environ.get('DATABASE_PASSWORD', 'yoyolepib'),
+        'HOST': os.environ.get('DATABASE_HOST', 'localhost'), 
+        'PORT': os.environ.get('DATABASE_PORT', '5433'),
     }
 }
 
