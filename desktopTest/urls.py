@@ -7,6 +7,8 @@ urlpatterns = [
     path('teapot/', views.teapot, name='teapot'),
     path('<str:note_id>/detail/', views.detail, name='note_detail'),
     path('timeEnv/', views.timeEnv, name='timeEnv'),
-    path('notes/get/all', views.getNotes, name='getNotes'),
-    path('notes/create/', views.createNote, name='createNote'),
+    path('notes/get/all', views.notes_get, name='getNotes'),
+    path('notes/create', views.note_create, name='createNote'),
+    path('notes/update/<int:id>', views.note_update, name='updateNote'),
+    path('notes/delete/<int:id>', views.note_delete, name='deleteNote'),
 ]
